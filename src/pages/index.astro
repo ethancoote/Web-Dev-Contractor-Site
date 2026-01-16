@@ -47,8 +47,6 @@ import ReviewCard from "../components/ReviewCard.astro";
 			}
     	</style>
         
-        <!--link rel="preload" fetchpriority="high" href="/images/mobile/mockup.webp" as="image" media="(max-width: 480px)">
-        <link rel="preload" fetchpriority="high" href="/images/mockup.webp" as="image" media="(min-width: 481px)"-->
         <link rel="preload" href="/images/cssLogo.webp" as="image">
         <link rel="preload" href="/images/htmlLogo.webp" as="image">
         <link rel="preload" href="/images/jsLogo.webp" as="image">
@@ -98,23 +96,17 @@ import ReviewCard from "../components/ReviewCard.astro";
                     </div>
                 </div>
             </div>
-            <!--div class="box closer center">
-                <picture>
-                    <source srcset="images/mobile/mockup.webp" media="(min-width: 0px) and (max-width: 480px)">
-                    <img class="normalImg sixteenByNine" id="heroImage2" src="images/mockup.webp" alt="mockup of a website on different screen sizes" fetchpriority="high" loading="eager">
-                </picture>
-                
-            </div-->
             <div id="tagsMobile" class="box close centerMobile across">
-                    <div class="box acrossTrue closer centerAlign tag shrink visCenter">
-                        <img class="iconSmall" src="images/check.svg" alt="checkmark icon">
-                        <p>Bug-Fix Guarantee</p>
-                    </div>
-                    <div class="box acrossTrue closer centerAlign tag shrink visCenter">
-                        <img class="iconSmall" src="images/check.svg" alt="checkmark icon" >
-                        <p>14-Day Delivery</p>
-                    </div>
+                <br>
+                <div class="box acrossTrue closer centerAlign tag shrink visCenter">
+                    <img class="iconSmall" src="images/check.svg" alt="checkmark icon">
+                    <p>Bug-Fix Guarantee</p>
                 </div>
+                <div class="box acrossTrue closer centerAlign tag shrink visCenter">
+                    <img class="iconSmall" src="images/check.svg" alt="checkmark icon" >
+                    <p>14-Day Delivery</p>
+                </div>
+            </div>
         </div>
 		<style>
             #tagsDesktop {
@@ -561,10 +553,10 @@ import ReviewCard from "../components/ReviewCard.astro";
                         <p class="pSmall">University of Guelph | 2019 - 2024</p>
                     </div>
                     <div class="box acrossTrue">
-                        <img class="icon square" src="images/htmlLogo.webp" alt="html logo">
-                        <img class="icon square" src="images/cssLogo.webp" alt="css logo">
-                        <img class="icon square" src="images/jsLogo.webp" alt="js logo">
-                        <img class="icon square" src="images/astroLogo.webp" alt="astro logo">
+                        <img class="icon square dark" src="images/htmlLogo.webp" alt="html logo">
+                        <img class="icon square dark" src="images/cssLogo.webp" alt="css logo">
+                        <img class="icon square dark" src="images/jsLogo.webp" alt="js logo">
+                        <img class="icon square dark" src="images/astroLogo.webp" alt="astro logo">
                     </div>
                     
                 </div>

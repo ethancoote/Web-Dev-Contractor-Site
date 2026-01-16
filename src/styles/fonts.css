@@ -170,3 +170,9 @@ i {
     width: 100%;
     height: 40px;
 }
+
+@media only screen and (max-width: 600px) {
+    .underline::after {
+        display: none;
+    }
+}
