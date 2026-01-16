@@ -163,12 +163,13 @@ i {
     content: '';
     position: absolute;
     bottom: -28px;
-    left: 4px;
+    left: 0px;
     background-image: url('/images/underline.svg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 100%;
     height: 40px;
+    filter:grayscale(40%);
 }
 
 @media only screen and (max-width: 600px) {
