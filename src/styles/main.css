@@ -782,11 +782,12 @@ select {
         max-width: 90%;
         align-self: center;
     }
+    #contact {
+        padding: 16px 0px 0px 0px;
+    }
 }
 
-#contact {
-    padding: 16px 0px 16px 0px;
-}
+
 
 /*FOOTER*/
 .mainFooter {
