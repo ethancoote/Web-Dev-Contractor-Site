@@ -10,6 +10,9 @@
     --off-white:hsl(240, 100%, 99%);
     --off-gray: hsl(240, 36%, 96%);
     --black-tint: hsla(0, 0%, 0%, .05);
+    --white-tint: hsla(0, 0%, 100%, .15);
+    --white-back: hsla(0, 0%, 100%, .15);
+    --standard-shadow: 5px 5px 12px hsla(0,0%,0%, .1);
 }
 
 html {
@@ -28,14 +31,15 @@ html {
     align-items: center;
     justify-content: center;
     background-color: var(--off-white);
-    scroll-margin-top: 80px;
+    scroll-margin-top: 0px;
 }
 
 .normalSection.hero {
     min-height: 100vh;
     background-color: var(--off-white);
     padding: 32px 0px;
-    padding-top: 80px;
+    padding-top: 0px;
+    color:var(--off-white);
 }
 
 /*NAV BAR*/
@@ -48,7 +52,6 @@ html {
     height: 80px;
     padding: 0px 32px;
     z-index: 10;
-    max-width: var(--max-width);
 }
 
 .navigationMenu {
@@ -63,11 +66,11 @@ html {
     padding: 4px 12px;
     cursor:pointer;
     transition: .3s;
-    color: black;
+    color: var(--off-white);
 }
 
 .navigationMenu li:hover {
-    color: hsla(0, 0%, 0%, .5);
+    color: hsla(0, 0%, 100%, .5);
 }
 
 .logoDiv {
@@ -101,7 +104,8 @@ html {
 
 .box.logo {
     row-gap: 0px;
-    padding-bottom: 4px;
+    padding-bottom: 8px;
+    padding-left: 8px;
 }
 
 .navButton {
@@ -113,23 +117,26 @@ html {
 #navMobile {
     display: none;
     justify-content: center;
-    position:fixed;
-    border-bottom: solid 1px hsla(0, 0%, 0%, .1);
+    position:absolute;
+    /*border-bottom: solid 1px hsla(0, 0%, 0%, .1);*/
+    padding-left: 0px;
+    padding-right: 8px;
     height:fit-content;
-    background-color: var(--off-white);
+    background-color: #0000;
     width:100%;
     z-index:12;
 }
 #navDesktop {
     display: flex;
     justify-content: center;
-    position:fixed;
-    border-bottom: solid 1px hsla(0, 0%, 0%, .07);
+    position:absolute;
+    top: 12px;
+    /*border-bottom: solid 1px hsla(0, 0%, 0%, .07);*/
     height:fit-content;
     width:100%;
     z-index:10;
-    background-color: var(--off-white);
-    box-shadow: 0px 5px 16px hsla(0, 0%, 0%, .05);
+    background-color: #0000;
+    /*box-shadow: 0px 5px 16px hsla(0, 0%, 0%, .05);*/
 }
 @media only screen and (max-width:1200px) {
     #navDesktop {
@@ -143,18 +150,19 @@ html {
 .mobileMenu {
     display: flex;
     flex-direction: column;
-    position: fixed;
-    top:-400px;
+    position: absolute;
+    top:-450px;
     left: 0;
     right:0;
-    background-color: var(--off-white);
+    background-color: hsla(0, 0%, 0%, .7);
     height: fit-content;
     justify-content: center;
     align-items: center;
     text-align: center;
     z-index: 9;
     row-gap: 24px;
-    padding: 32px 0px;
+    backdrop-filter: blur(10px);
+    padding: 80px 0px 32px 0px;
     transition: .5s ease-in-out;
     border-bottom: solid 1px hsla(0, 0%, 0%, .2);
 }
@@ -195,6 +203,9 @@ html {
     .container {
         padding: 48px 12px;
     }
+    .box.logo {
+        row-gap: 2px;
+    }
 }
 @media only screen and (max-width:900px) {
     .container {
@@ -216,12 +227,11 @@ html {
     width: 100%;
     height: fit-content;
     z-index: 3;
-}
 
-.box.hero {
-    width: 100%;
-    text-wrap: balance;
-    text-align: start;   
+    &.hero {
+        width: 100%;
+        text-wrap: balance;
+    }
 }
 @media only screen and (max-width:900px) {
     .box.hero {
@@ -231,8 +241,9 @@ html {
     .normalSection.hero {
         min-height: 100vh;
         height: fit-content;
-        justify-content: end;
+        justify-content: center;
         padding-bottom: 0px;
+        padding-top: 64px;
     }
     .normalSection.hero .container {
         padding-bottom: 32px;
@@ -247,6 +258,19 @@ html {
     left: 0;
     right:0;
     z-index: 0;
+
+    &.hero {
+        background-image: linear-gradient(to top, var(--off-black), var(--primary-darkest));
+        margin:8px;
+        border-radius: var(--border-radius);
+    }
+
+    &.texture {
+        background-image: url("/images/texture.webp");
+        opacity:8%;
+        background-size: cover;
+    }
+
 }
 
 .container.fill {
@@ -302,6 +326,12 @@ html {
     .grid {
         grid-template-columns: 100%;
     }
+
+    .gradientBG {
+        &.texture {
+            background-image: url("/images/mobile/texture.webp");
+        }
+    }
 }
 
 
@@ -315,15 +345,17 @@ html {
 
 
 .tag {
-    background-color: var(--off-white);
+    background-color: var(--white-tint);
     padding: 4px 12px;
     line-height: 2rem;
     border-radius: 30px;
-    color: hsla(0, 0%, 0%, .7);
-}
+    color: var(--off-white);
 
-.tag.dark {
-    background-color: var(--off-gray);
+    &.dark {
+        background-color: var(--black-tint);
+        box-shadow:none;
+        color: hsla(0, 0%, 0%, .7);
+    }
 }
 
 .tag.visCenter {
@@ -475,6 +507,10 @@ html {
 .centerAlign {
     align-items: center;
 }
+.limit700 {
+    max-width: 700px;
+}
+
 .limit500 {
     max-width:500px;
 }
@@ -541,18 +577,29 @@ html {
     align-items: center;
     justify-content: center;
     column-gap: 12px;
-    background-color: var(--secondary-color);
-    color: white;
+    background-color: var(--off-white);
+    color: var(--off-black);
     width: fit-content;
     height: fit-content;
     padding: 8px 24px;
     transition: .3s;
     border-radius: var(--border-radius);
-    border: solid 2px var(--secondary-color);
+    border: solid 2px var(--off-white);
+
+    &.light {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        color: var(--off-white);
+
+        &:hover {
+            color: var(--primary-color);
+            background-color: var(--off-white);
+        }
+    }
 }
 @media only screen and (max-width: 900px) {
     .button {
-        width: 100%;
+        width: 95%;
     }
 }
 
@@ -563,14 +610,14 @@ html {
 }
 
 .button:hover {
-    background-color: var(--secondary-hover);
-    border-color: var(--primary-color);
+    
     color: var(--primary-color);
     cursor: pointer;
+    box-shadow: 0px 8px 20px hsla(0,0%,100%, .15), 0px 5px 12px hsla(221, 62%, 58%, 0.5);
 }
 
 .button .svgArrow {
-    fill: var(--off-white);
+    fill: var(--off-black);
     transform-origin: 50% 50%;
     transition: .3s;
 }
@@ -580,29 +627,23 @@ html {
     transform: rotate(-45deg);
 }
 
-.button.main {
-    box-shadow: 0px 5px 16px hsla(0, 0%, 0%, .1);
-}
-
 .button.secondary {
-    color:var(--primary-color);
+    color:var(--off-white);
     background-color: #0000;
-    border: solid 2px var(--primary-color);
+    border: solid 2px var(--off-white);
 }
 
 .button.secondary:hover {
-    background-color: white;
-    border-color: var(--primary-color);
-    color: var(--primary-color);
-    box-shadow: 0px 5px 16px hsla(0, 0%, 0%, .1)
+    background-color: var(--white-tint);
 }
 
 .button.secondary .svgArrow {
-    fill: var(--primary-color);
+    fill: var(--off-white);
 }
 
 .button.fill {
     width: 100%;
+    align-self: center;
 }
 
 /*IMGS*/
@@ -642,7 +683,7 @@ html {
 .icon {
     height: 48px;
     width: 48px;
-    background-color: var(--off-gray);
+    background-color: var(--white-tint);
     padding:4px;
     border-radius: 100px;
     aspect-ratio: 1;
@@ -697,12 +738,17 @@ html {
 /*FORM*/
 .inputBox {
     font-size: 1.6rem;
-    background-color: hsla(0, 0%, 0%, .08);
+    background-color: hsla(0, 0%, 0%, .4);
+    color: hsla(0, 0%, 100%, .8);
     border: 1px solid hsla(0,0%,0%, .1);
     padding: 12px;
     border-radius: var(--border-radius);
     width: 100%;
     margin-bottom: 16px;
+
+    &::placeholder {
+        color: hsla(0, 0%, 100%, .7);
+    }
 }
 
 .inputBox:focus {
@@ -716,8 +762,25 @@ html {
 
 select {
     background-color: var(--black-tint);
-    font-size: 1.8rem;
-    color:hsla(0, 0%, 0%, .9)
+    border: 1px solid hsla(0,0%,0%, .1);
+    color:hsla(0, 0%, 0%, .9);
+    height: 48px;
+    align-items: center;
+}
+
+@media only screen and (max-width:600px) {
+    select {
+        height: 45px;
+    }
+
+    .contact {
+        max-width: 95%;
+        align-self: center;
+    }
+}
+
+#contact {
+    padding: 16px 0px 16px 0px;
 }
 
 /*FOOTER*/
