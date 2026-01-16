@@ -20,7 +20,6 @@ portfolioItems.forEach((item) => {
     item.addEventListener("click", function() {
         lightbox.style.display = "flex";
         lightboxImg.src = homepages[index];
-        console.log("hello");
         open = true;
     });
     i++;
