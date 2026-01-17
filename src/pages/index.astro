@@ -66,14 +66,18 @@ import ReviewCard from "../components/ReviewCard.astro";
             
             <div class="box hero limit center">
                 
-                <div class="box center acrossTrue">
+                <!--div class="box center acrossTrue">
                     <img class="icon square" src="images/htmlLogo.webp" alt="html logo">
                     <img class="icon square" src="images/cssLogo.webp" alt="css logo">
                     <img class="icon square" src="images/jsLogo.webp" alt="js logo">
                     <img class="icon square" src="images/astroLogo.webp" alt="astro logo">
+                </div-->
+                <div class="iconBack">
+                    <img class="iconLarge" src="/images/logo.svg" alt="logo">
                 </div>
                 
-                <h1 id="headline">Professional Websites<br>For <span class="underline">Service</span> Businesses</h1>
+                
+                <h1 id="headline">Professional Websites<br><span class="">For Service Businesses</span></h1>
                 <p id="subHeadline" class="subtextWhite">Cold calling, emailing, and Facebook <i>can</i> get you clients, but it's inconsistent and time consuming. Don’t waste time and money looking for leads. Let your customers come to you.</p>
                 <div id="heroButtons" class="box across close center mobile8Gap">
                     <a href="#contact" class="button main"><p class="buttonText">Get Started</p>
@@ -113,7 +117,7 @@ import ReviewCard from "../components/ReviewCard.astro";
                 position: absolute;
                 width: fit-content;
                 bottom: 32px;
-                right: 32px;
+                left: 32px;
             }
 			@media only screen and (max-width: 900px){
 				#tagsDesktop {

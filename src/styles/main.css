@@ -10,7 +10,7 @@
     --off-white:hsl(240, 100%, 99%);
     --off-gray: hsl(240, 36%, 96%);
     --black-tint: hsla(0, 0%, 0%, .05);
-    --white-tint: hsla(0, 0%, 100%, .15);
+    --white-tint: hsla(0, 0%, 100%, .1);
     --white-back: hsla(0, 0%, 100%, .15);
     --standard-shadow: 5px 5px 12px hsla(0,0%,0%, .1);
 }
@@ -117,13 +117,15 @@ html {
 #navMobile {
     display: none;
     justify-content: center;
+    justify-self: center;
     position:absolute;
     /*border-bottom: solid 1px hsla(0, 0%, 0%, .1);*/
     padding-left: 0px;
     padding-right: 8px;
+    top: 8px;
     height:fit-content;
     background-color: #0000;
-    width:100%;
+    width:95%;
     z-index:12;
 }
 #navDesktop {
@@ -704,6 +706,19 @@ html {
     height: 20px;
     width: auto;
     aspect-ratio: 1;
+}
+
+.iconLarge {
+    width: 48px;
+    height: 48px;
+    padding: 4px;
+    opacity: 90%;
+}
+.iconBack {
+    background-color: var(--white-tint);
+    border-radius: 100px;
+    padding: 6px;
+    box-shadow: var(--standard-shadow);
 }
 #performance {
     object-position: top;
