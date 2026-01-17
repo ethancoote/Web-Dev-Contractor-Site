@@ -766,11 +766,18 @@ html {
 }
 
 select {
+    appearance: none;
+    font: inherit;
     background-color: var(--black-tint);
     border: 1px solid hsla(0,0%,0%, .1);
     color:hsla(0, 0%, 0%, .9);
     height: 48px;
     align-items: center;
+    
+    &:open {
+        background-color: var(--off-black);
+        border-radius: var(--border-radius);
+    }
 }
 
 @media only screen and (max-width:600px) {
