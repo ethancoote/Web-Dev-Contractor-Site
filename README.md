@@ -2,4 +2,4 @@
 
 My personal website/portfolio as an independent contractor.
 
-Build with Astro, hosted through FIrebase Hosting.
+Build with Astro, hosted through Firebase Hosting.
